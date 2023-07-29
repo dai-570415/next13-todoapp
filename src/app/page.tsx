@@ -1,18 +1,11 @@
-import { AddTodo } from './components/AddTodo/AddTodo';
-import { TodoList } from './components/TodoList/TodoList';
-import { getAllTodos } from '../api';
+import { Fv } from './components/Fv/Fv';
+import { NextLink } from './components/Link/Link';
 
 const Home = async () => {
-  const todos = await getAllTodos();
-
   return (
     <main>
-      <section>
-        <div>
-          <AddTodo />
-          <TodoList todos={todos} />
-        </div>
-      </section>
+      <Fv imgPath="next.jpg" imgName="next.js 13" />
+      <NextLink labelName="Todo Page" dir="/todo" />
     </main>
   );
 }
