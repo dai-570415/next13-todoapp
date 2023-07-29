@@ -2,11 +2,11 @@ import { editTodo, deleteTodo } from '@/api';
 import { TodoProps } from '@/types';
 import { useState, useEffect,  useRef, ChangeEvent } from 'react';
 
-export const Todo = ({ todos }: TodoProps) => {
+export const Todo = ({ todo }: TodoProps) => {
     const ref = useRef<HTMLInputElement>(null);
 
     const [isEditing, setIsEditing] = useState(false);
-    const [editedTaskTitle, setEditedTaskTitle] = useState(todos.text);
+    const [editedTaskTitle, setEditedTaskTitle] = useState(todo.text);
 
     useEffect(() => {
         if (isEditing) {
@@ -18,17 +18,17 @@ export const Todo = ({ todos }: TodoProps) => {
         setIsEditing(true)
     }
     const handleSave = async () => {
-        await editTodo(todos.id, editedTaskTitle);
+        await editTodo(todo.id, editedTaskTitle);
         setIsEditing(false);
         window.location.reload();
     }
     const handleDelete = async () => {
-        await deleteTodo(todos.id);
+        await deleteTodo(todo.id);
         window.location.reload();
     }
 
     return (
-        <li key={todos.id}>
+        <li key={todo.id}>
             {isEditing ? (
                 <div>
                     <input 
@@ -39,7 +39,7 @@ export const Todo = ({ todos }: TodoProps) => {
                     />
                 </div>
             ): (
-                <div>{todos.text}</div>
+                <div>{todo.text}</div>
             )}
             
             <div>

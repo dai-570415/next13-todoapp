@@ -8,5 +8,5 @@ export type TodoListProps = {
 }
 
 export type TodoProps = {
-    todos: TodoTypes;
+    todo: TodoTypes;
 }

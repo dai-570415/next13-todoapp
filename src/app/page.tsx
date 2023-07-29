@@ -2,17 +2,19 @@ import { AddTodo } from './components/AddTodo/AddTodo';
 import { TodoList } from './components/TodoList/TodoList';
 import { getAllTodos } from '../api';
 
-export default async function Home() {
+const Home = async () => {
   const todos = await getAllTodos();
 
   return (
     <main>
-      <div>
+      <section>
         <div>
           <AddTodo />
           <TodoList todos={todos} />
         </div>
-      </div>
+      </section>
     </main>
   );
 }
+
+export default Home;
