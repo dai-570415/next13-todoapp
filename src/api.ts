@@ -10,6 +10,7 @@ export const getAllTodos = async (): Promise<TodoTypes[]> => {
         const todo: TodoTypes = {
             id: doc.id,
             text: doc.data().text,
+            // 要素が増えたら追加
         };
         todos.push(todo);
     });
