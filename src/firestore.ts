@@ -2,7 +2,7 @@ import { TodoTypes } from './types';
 import { collection, addDoc, updateDoc, deleteDoc, getDocs, doc } from 'firebase/firestore';
 import { db } from './app/Firebese';
 
-// Firestrage 表示  
+// firestore 表示  
 export const getAllTodos = async (): Promise<TodoTypes[]> => {
     const querySnapshot = await getDocs(collection(db, 'todos'));
     const todos: TodoTypes[] = [];
@@ -16,19 +16,19 @@ export const getAllTodos = async (): Promise<TodoTypes[]> => {
     });
     return todos;
 };
-// Firestrage 追加
+// firestore 追加
 export const addTodo = async (todo: TodoTypes): Promise<TodoTypes> => {
     await addDoc(collection(db, 'todos'), todo);
     return todo;
 };
-// Firestrage 編集
+// firestore 編集
 export const editTodo = async (id: string, newText: string): Promise<TodoTypes> => {
     const todoRef = doc(db, 'todos', id);
     await updateDoc(todoRef, { text: newText });
     const updatedTodo = { id, text: newText };
     return updatedTodo;
 };
-// Firestrage 削除
+// firestore 削除
 export const deleteTodo = async (id: string): Promise<void> => {
     const todoRef = doc(db, 'todos', id);
     await deleteDoc(todoRef);

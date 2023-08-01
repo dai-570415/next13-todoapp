@@ -1,6 +1,6 @@
 'use client';
 
-import { addTodo } from '@/api';
+import { addTodo } from '@/firestore';
 import { useState, FormEvent, ChangeEvent } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 

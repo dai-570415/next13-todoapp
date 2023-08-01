@@ -1,4 +1,4 @@
-import { editTodo, deleteTodo } from '@/api';
+import { editTodo, deleteTodo } from '@/firestore';
 import { TodoProps } from '@/types';
 import { useState, useEffect,  useRef, ChangeEvent } from 'react';
 
