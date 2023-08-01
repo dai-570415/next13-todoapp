@@ -1,0 +1,57 @@
+.todo {
+    h3 {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        width: calc(100% - 40px);
+        margin: 0 auto 8px;
+        img {
+            display: block;
+            width: 16px;
+            height: 16px;
+            margin: 0 6px 0 0;
+        }
+    }
+    ul {
+        width: 100%;
+        margin: 0 auto;
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #ccc;
+            &:last-child {
+                border-bottom: 1px solid #ccc;
+            }
+            .text {
+                width: 70%;
+                padding: 0 0 0 20px;
+                .input {
+                    display: block;
+                    font-size: 16px;
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                }
+            }
+            .btnSet {
+                width: 96px;
+                .btn {
+                    color: #fff;
+                    width: 48px;
+                    height: 48px;
+                    border: none;
+                }
+                .edit {
+                    background: #989592;
+                }
+                .done {
+                    background: #f4ac37;
+                }
+                .delete {
+                    background: #dc6262;
+                }
+            }
+        }
+    }
+}

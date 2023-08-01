@@ -1,12 +1,12 @@
 import { Header } from './components/Layout/Header';
-import { NextLink } from './components/Link/Link';
+import Link from 'next/link';
 
 const Home = async () => {
   return (
     <>
-      <Header pageTitle="TOP" />
+      <Header pageTitle="トップ" />
       <main>
-        <NextLink labelName="Todo Page" dir="/todo" />
+        <Link href="/todo">Todo</Link>
       </main>
     </>
   );

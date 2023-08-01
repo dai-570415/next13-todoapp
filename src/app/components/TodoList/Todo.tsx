@@ -1,6 +1,7 @@
 import { editTodo, deleteTodo } from '@/firestore';
 import { TodoProps } from '@/types';
 import { useState, useEffect,  useRef, ChangeEvent } from 'react';
+import Styles from './css/Todo.module.css';
 
 export const Todo = ({ todo }: TodoProps) => {
     const ref = useRef<HTMLInputElement>(null);
@@ -30,8 +31,9 @@ export const Todo = ({ todo }: TodoProps) => {
     return (
         <li key={todo.id}>
             {isEditing ? (
-                <div>
-                    <input 
+                <div className={Styles.text}>
+                    <input
+                        className={Styles.input}
                         ref={ref}
                         type="text" 
                         value={editedTaskTitle}
@@ -39,17 +41,17 @@ export const Todo = ({ todo }: TodoProps) => {
                     />
                 </div>
             ): (
-                <div>{todo.text}</div>
+                <div className={Styles.text}>{todo.text}</div>
             )}
             
-            <div>
+            <div className={Styles.btnSet}>
                 {isEditing ? (
-                    <button onClick={handleSave}>保存</button>
+                    <button className={Styles.btn + ' ' + Styles.done} onClick={handleSave}>保存</button>
                 ): (
-                    <button onClick={handleEdit}>編集</button>
+                    <button className={Styles.btn + ' ' + Styles.edit} onClick={handleEdit}>編集</button>
                 )}
             
-                <button onClick={handleDelete}>削除</button>
+                <button className={Styles.btn + ' ' + Styles.delete} onClick={handleDelete}>削除</button>
             </div>
         </li>
     );
