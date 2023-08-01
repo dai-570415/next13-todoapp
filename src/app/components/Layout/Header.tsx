@@ -1,7 +1,7 @@
-export const Header = () => {
+export const Header = (props: { pageTitle:string }) => {
     return (
         <header>
-            <h1>Next.js 13</h1>
+            <h1>{props.pageTitle}</h1>
         </header>
     );
 }
