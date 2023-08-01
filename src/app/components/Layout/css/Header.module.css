@@ -1,7 +1,8 @@
 .header {
-    margin: 0 auto 24px;
+    margin: 0 auto;
     padding: 24px 0 12px;
     background: #ff9d00;
+    position: relative;
 }
 .header h1 {
     text-align: center;

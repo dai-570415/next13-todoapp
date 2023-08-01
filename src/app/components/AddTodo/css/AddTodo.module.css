@@ -1,6 +1,6 @@
 .addTodo {
     width: calc(100% - 40px);
-    margin: 0 auto 24px;
+    margin: 24px auto;
 }
 .addTodo .formSet {
     display: flex;
